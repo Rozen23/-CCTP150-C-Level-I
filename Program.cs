@@ -4,32 +4,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment2
+namespace Assignment3._1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            bool attendingSchool = true;
-            bool workingFullTime =false;
-            bool attendingSchoolandWorking=attendingSchool && workingFullTime;
+            Console.Write("Enter a number between 1 and 100: ");
+            int number= int.Parse(Console.ReadLine());
+            if(number >=1  && number<=100)
+            {
+                int totalnum = 0;
+                for(int x=1; x<=number;x++)
+                {
+                    if(IsEvenNumber(x))
+                    {
+                        totalnum += x;
+                        Console.Write("{0}", x);
+                        if (x < number && number-x>1)
+                        {
+                            Console.Write(" + ");
+                        }
+                    }
+                }
+                Console.Write(" = {0}", totalnum);
+            }
+            else
+            {
+                Console.WriteLine("Wrong entry please enter numebr only");
+            }
+            Console.ReadKey();
 
-            string name ="Rozen";
-            string city= "Edmonon";
-
-            int yearsCollege=2;
-            int yearsUniversity=1;
-            int totalPostSecondaryYears = yearsCollege + yearsUniversity;
-            bool moreThan4YearsPostSecondary = totalPostSecondaryYears>4;
-
-            bool hardworking = true;
-            bool smart = true;
-
-            Console.WriteLine("Name "+name +" from "+ city);
-            Console.WriteLine("Attending school and working: " + attendingSchoolandWorking);
-            Console.WriteLine("More Than 4 Years of PostSecondary: " + moreThan4YearsPostSecondary);
-            Console.WriteLine("Hard Working or Smart: " + (hardworking || smart));
-
+        }
+        static public bool IsEvenNumber(int intNumber)
+        {
+            return intNumber % 2 == 0;
         }
     }
 }
