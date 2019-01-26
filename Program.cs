@@ -14,7 +14,7 @@ namespace Assignment2
             bool workingFullTime =false;
             bool attendingSchoolandWorking=attendingSchool && workingFullTime;
 
-            string name ="Khevna";
+            string name ="Rozen";
             string city= "Edmonon";
 
             int yearsCollege=2;
